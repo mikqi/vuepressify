@@ -15,6 +15,9 @@
   "bin": {
     "vuepressify": "app/cli.js"
   },
+  "scripts": {
+    "test": "xo && ava"
+  },
   "main": "app/index.js",
   "files": [
     "app"
@@ -36,5 +39,15 @@
   "license": "MIT",
   "engines": {
     "node": ">= 8"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "execa": "^0.10.0",
+    "xo": "^0.21.1"
+  }, 
+  "xo": {
+    "space": true,
+    "semicolon": false,
+    "no-new": false
   }
 }

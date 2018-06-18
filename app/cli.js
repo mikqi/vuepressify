@@ -1,8 +1,8 @@
 #! /usr/bin/env node
 
 'use strict'
-const Vuepressify = require('./init')
 const meow = require('meow')
+const Vuepressify = require('./init')
 
 const cli = meow(`
   Integrate Vuepress to your existing project
@@ -36,4 +36,5 @@ const cli = meow(`
   }
 })
 
+/* eslint no-new:0 */
 new Vuepressify(cli.input[0], cli.flags)

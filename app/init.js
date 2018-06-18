@@ -1,15 +1,16 @@
 #! /usr/bin/env node
 
 'use strict'
-const inquirer = require('inquirer')
 const path = require('path')
+const inquirer = require('inquirer')
 const fs = require('fs-extra')
 const ejs = require('ejs')
 const chalk = require('chalk')
-const log = console.log
+
+const {log} = console
 
 module.exports = class {
-  constructor (input, flags) {
+  constructor(input, flags) {
     this.paths = {
       current: path.resolve(),
       initial: path.resolve(__dirname, 'templates/initial'),
@@ -22,7 +23,7 @@ module.exports = class {
     this.run()
   }
 
-  async run () {
+  async run() {
     if (this.input && this.input.includes('init')) {
       this.init()
     }
@@ -32,7 +33,7 @@ module.exports = class {
     }
   }
 
-  async init () {
+  async init() {
     this.answers = await inquirer.prompt(this.questions)
     this.paths.docs = this.paths.current + '/' + this.answers.folder
     await fs.copy(this.paths.initial, this.paths.docs)
@@ -40,8 +41,8 @@ module.exports = class {
     await this.installVuepress()
   }
 
-  checkFlags () {
-    const { generate } = this.flags
+  checkFlags() {
+    const {generate} = this.flags
     if (typeof generate === 'boolean') {
       log(chalk.red('Generete need value doc name'))
       return false
@@ -52,8 +53,8 @@ module.exports = class {
     }
   }
 
-  async generateDocs () {
-    const { generate, loc } = this.flags
+  async generateDocs() {
+    const {generate, loc} = this.flags
     this.paths.docs = this.paths.current + '/' + loc
     const directory = this.paths.docs + '/' + generate
 
@@ -68,14 +69,14 @@ module.exports = class {
     log(`Your new docs is already`)
   }
 
-  formatTemplate (file) {
-    let configFile = this.paths.docs + file
+  formatTemplate(file) {
+    const configFile = this.paths.docs + file
     let content = fs.readFileSync(configFile, 'utf8')
     content = ejs.render(content, this.answers)
     fs.writeFileSync(configFile, content)
   }
 
-  listQuestions () {
+  listQuestions() {
     return [{
       type: 'input',
       name: 'title',
@@ -94,9 +95,9 @@ module.exports = class {
     }]
   }
 
-  async installVuepress () {
-    const { execSync } = require('child_process')
-    await execSync('npm i -s vuepress', { stdio: [0, 1, 2] })
+  async installVuepress() {
+    const {execSync} = require('child_process')
+    await execSync('npm i -s vuepress', {stdio: [0, 1, 2]})
     log(`
     now ${chalk.green('vuepress')} already added to your project 🎉
     `)
