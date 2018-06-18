@@ -1,4 +1,5 @@
-# VuePressify
+# VuePressify ![license mit](https://img.shields.io/github/license/mikqi/vuepressify.svg?longCache=true&style=flat-square) [![Twitter](https://img.shields.io/twitter/url/https/github.com/mikqi/vuepressify.svg?style=flat-square)](https://twitter.com/intent/tweet?text=Add%20Vuepress%20to%20your%20existing%20project%20with%20Vuepressify%20🎉🎉%20:&url=https%3A%2F%2Fgithub.com%2Fmikqi%2Fvuepressify)
+
 
 > Add Vuepress documentation to your existing project with one command
 
