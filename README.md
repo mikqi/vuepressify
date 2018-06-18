@@ -3,12 +3,12 @@
 > Add Vuepress documentation to your existing project with one command
 
 ## Usage
-First install [NodeJS](https://nodejs.org) after that you can add vuepress to your existing project with command:
+First, you must install [NodeJS](https://nodejs.org) then you can add Vuepress to your existing project using this command:
 
 ```
 $ npx vuepressify init
 ```
-or you can install global
+or you can install globally
 ```
 $ npm i -g vuepressify
 $ vuepressify init
