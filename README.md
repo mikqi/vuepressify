@@ -1,4 +1,4 @@
-# VuePressify ![license mit](https://img.shields.io/github/license/mikqi/vuepressify.svg?longCache=true&style=flat-square) [![Twitter](https://img.shields.io/twitter/url/https/github.com/mikqi/vuepressify.svg?style=flat-square)](https://twitter.com/intent/tweet?text=Add%20Vuepress%20to%20your%20existing%20project%20with%20Vuepressify%20🎉🎉%20:&url=https%3A%2F%2Fgithub.com%2Fmikqi%2Fvuepressify)
+# VuePressify [![Build Status](https://travis-ci.org/mikqi/vuepressify.svg?branch=master&longCache=true)](https://travis-ci.org/mikqi/vuepressify) ![license mit](https://img.shields.io/github/license/mikqi/vuepressify.svg?longCache=true) [![Twitter](https://img.shields.io/twitter/url/https/github.com/mikqi/vuepressify.svg)](https://twitter.com/intent/tweet?text=Add%20Vuepress%20to%20your%20existing%20project%20with%20Vuepressify%20🎉🎉%20:&url=https%3A%2F%2Fgithub.com%2Fmikqi%2Fvuepressify)
 
 
 > Add Vuepress documentation to your existing project with one command
@@ -42,11 +42,11 @@ Add this script to your `package.json`. more detail read [this](https://vuepress
 ```
 
 ## Built with
-* [meow]()
-* [inquirer]()
-* [chalk]() 
-* [ejs]()
-* [fs-extra]()
+* [meow](https://github.com/sindresorhus/meow)
+* [inquirer](https://github.com/SBoudrias/Inquirer.js)
+* [chalk](https://github.com/chalk/chalk)
+* [ejs](https://github.com/tj/ejs)
+* [fs-extra](https://github.com/jprichardson/node-fs-extra)
 
 ## License
 MIT © [Mikqi](http://this.rivki.id)
