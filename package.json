@@ -6,8 +6,8 @@
     "email": "m.rivki@bukalapak.com",
     "url": "http://this.rivki.id"
   },
-  "homepage": "https://github.com/petecoop/generator-express",
-  "bugs": "https://github.com/petecoop/generator-express/issues",
+  "homepage": "https://github.com/mikqi/vuepressify",
+  "bugs": "https://github.com/mikqi/vuepressify/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/mikqi/vuepressify.git"
@@ -18,6 +18,13 @@
   "main": "app/index.js",
   "files": [
     "app"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "vuepress",
+    "vue",
+    "generator"
   ],
   "dependencies": {
     "chalk": "^2.4.1",
