@@ -1,0 +1,33 @@
+{
+  "name": "vuepressify",
+  "version": "0.0.1",
+  "author": {
+    "name": "Muhammad Rivki",
+    "email": "m.rivki@bukalapak.com",
+    "url": "http://this.rivki.id"
+  },
+  "homepage": "https://github.com/petecoop/generator-express",
+  "bugs": "https://github.com/petecoop/generator-express/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikqi/vuepressify.git"
+  },
+  "bin": {
+    "vuepressify": "app/cli.js"
+  },
+  "main": "app/index.js",
+  "files": [
+    "app"
+  ],
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "ejs": "^2.6.1",
+    "fs-extra": "^6.0.1",
+    "inquirer": "^6.0.0",
+    "meow": "^5.0.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 8"
+  }
+}

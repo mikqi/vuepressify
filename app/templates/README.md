@@ -1,0 +1,5 @@
+---
+title: <%= pageName %>
+---
+
+# <%= pageName %>
