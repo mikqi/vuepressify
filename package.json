@@ -16,7 +16,7 @@
     "vuepressify": "app/cli.js"
   },
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo && ava --serial"
   },
   "main": "app/index.js",
   "files": [
@@ -43,8 +43,9 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "execa": "^0.10.0",
+    "inquirer-test": "^2.0.1",
     "xo": "^0.21.1"
-  }, 
+  },
   "xo": {
     "space": true,
     "semicolon": false,

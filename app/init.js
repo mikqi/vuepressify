@@ -57,16 +57,22 @@ module.exports = class {
     const {generate, loc} = this.flags
     this.paths.docs = this.paths.current + '/' + loc
     const directory = this.paths.docs + '/' + generate
+    const isDirectoryExists = fs.pathExistsSync(directory)
 
     this.answers = {
       pageName: generate
+    }
+
+    if (isDirectoryExists) {
+      log('Pages already exist')
+      return 0
     }
 
     fs.mkdirSync(directory)
     await fs.copyFileSync(this.paths.templates + '/README.md', directory + '/README.md')
     await this.formatTemplate(`/${generate}/README.md`)
 
-    log(`Your new docs is already`)
+    log(`Your new page is already`)
   }
 
   formatTemplate(file) {
@@ -97,7 +103,7 @@ module.exports = class {
 
   async installVuepress() {
     const {execSync} = require('child_process')
-    await execSync('npm i -s vuepress', {stdio: [0, 1, 2]})
+    await execSync('pnpm i -s vuepress', {stdio: [0, 1, 2]})
     log(`
     now ${chalk.green('vuepress')} already added to your project 🎉
     `)
