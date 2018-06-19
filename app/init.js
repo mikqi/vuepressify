@@ -112,7 +112,7 @@ module.exports = class {
 
   async installVuepress() {
     const {execSync} = require('child_process')
-    await execSync('pnpm i -s vuepress', {stdio: [0, 1, 2]})
+    await execSync('npm i -s vuepress', {stdio: [0, 1, 2]})
     log(`now ${chalk.green('vuepress')} already added to your project`)
     log(`Read more about Vuepress in this link ${chalk.green('https://vuepress.vuejs.org/config/')}`)
   }
