@@ -28,6 +28,24 @@ $ vuepressify -g newDocs --l myDocs
 ```
 flag `generate` is required if you want to generate new docs and `loc` is `optional` by default it will set to `docs` folder
 
+```
+Usage
+    $ vuepressify init
+    or
+    $ vuperessify <options>
+
+  Options
+    --generate=value,   -g    generate new docs
+    --loc=value,        -l    set location for generate new docs. default is *docs*
+    --help                    show available commands
+    --version                 show vuepressify version
+
+  Examples
+    $ vuepressify --generate=new_docs
+    or
+    $ vuepressify --generate=new_docs --loc=documentation
+```
+
 ## How to run documentation
 
 Add this script to your `package.json`. more detail read [this](https://vuepress.vuejs.org/guide/getting-started.html#inside-an-existing-project)

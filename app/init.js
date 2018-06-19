@@ -44,8 +44,9 @@ module.exports = class {
   checkFlags() {
     const {generate} = this.flags
     if (typeof generate === 'boolean') {
-      log(chalk.red('Generete need value doc name'))
-      return false
+      log(chalk.yellow('did you forget about page name?'))
+      log(chalk.yellow('dont forget to add page name like this "vuepressify -g page_name"'))
+      return 0
     }
 
     if (typeof generate === 'string') {
@@ -57,14 +58,22 @@ module.exports = class {
     const {generate, loc} = this.flags
     this.paths.docs = this.paths.current + '/' + loc
     const directory = this.paths.docs + '/' + generate
+    const isDocsExists = fs.pathExistsSync(this.paths.docs)
     const isDirectoryExists = fs.pathExistsSync(directory)
 
     this.answers = {
       pageName: generate
     }
 
+    if (!isDocsExists) {
+      log(chalk.yellow('Do you have folder documentation in your project?'))
+      log(chalk.yellow('if not, please run "vuepressify init"'))
+      return 0
+    }
+
     if (isDirectoryExists) {
-      log('Pages already exist')
+      log(chalk.green(`Ooops! this ${generate} page already exist`))
+      log(chalk.green(`Try another name.`))
       return 0
     }
 
@@ -103,9 +112,8 @@ module.exports = class {
 
   async installVuepress() {
     const {execSync} = require('child_process')
-    await execSync('pnpm i -s vuepress', {stdio: [0, 1, 2]})
-    log(`
-    now ${chalk.green('vuepress')} already added to your project 🎉
-    `)
+    await execSync('npm i -s vuepress', {stdio: [0, 1, 2]})
+    log(`now ${chalk.green('vuepress')} already added to your project`)
+    log(`Read more about Vuepress in this link ${chalk.green('https://vuepress.vuejs.org/config/')}`)
   }
 }

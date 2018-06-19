@@ -5,8 +5,6 @@ const meow = require('meow')
 const Vuepressify = require('./init')
 
 const cli = meow(`
-  Integrate Vuepress to your existing project
-
   Usage
     $ vuepressify init
     or
@@ -14,14 +12,14 @@ const cli = meow(`
 
   Options
     --generate=value,   -g    generate new docs
-    --loc=value, -l     -l    set location for generate new docs. default is *docs*
+    --loc=value,        -l    set location for generate new docs. default is *docs*
     --help                    show available commands
     --version                 show vuepressify version
 
   Examples
-    $ vuepressify --generate=Foo
+    $ vuepressify --generate=new_docs
     or
-    $ vuepressify --generate=Foo --loc=documentation
+    $ vuepressify --generate=new_docs --loc=documentation
 `, {
   flags: {
     generate: {
