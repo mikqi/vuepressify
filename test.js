@@ -10,7 +10,7 @@ console.log(cliPath)
 
 test('add vuepress', async t => {
   await run([cliPath, 'init'], ['docs test', ENTER, 'description test', ENTER, ENTER])
-  t.pass('pass')
+  t.true(stats('./docs').isDirectory())
 })
 
 test('success add new docs', async t => {
