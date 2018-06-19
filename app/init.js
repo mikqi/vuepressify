@@ -81,7 +81,7 @@ module.exports = class {
     await fs.copyFileSync(this.paths.templates + '/README.md', directory + '/README.md')
     await this.formatTemplate(`/${generate}/README.md`)
 
-    log(`Your new page is already`)
+    log(chalk.green(`Your new page is already`))
   }
 
   formatTemplate(file) {
@@ -112,7 +112,7 @@ module.exports = class {
 
   async installVuepress() {
     const {execSync} = require('child_process')
-    await execSync('npm i -s vuepress', {stdio: [0, 1, 2]})
+    await execSync('pnpm i -s vuepress', {stdio: [0, 1, 2]})
     log(`now ${chalk.green('vuepress')} already added to your project`)
     log(`Read more about Vuepress in this link ${chalk.green('https://vuepress.vuejs.org/config/')}`)
   }

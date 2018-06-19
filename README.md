@@ -29,6 +29,8 @@ $ vuepressify -g newDocs --l myDocs
 flag `generate` is required if you want to generate new docs and `loc` is `optional` by default it will set to `docs` folder
 
 ```
+$ vuepressify --help
+
 Usage
     $ vuepressify init
     or

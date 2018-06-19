@@ -1,6 +1,6 @@
 {
   "name": "vuepressify",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Add Vuepress documentation to your existing project with one command",
   "author": {
     "name": "Muhammad Rivki",
