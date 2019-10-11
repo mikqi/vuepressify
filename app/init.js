@@ -92,28 +92,58 @@ module.exports = class {
   }
 
   listQuestions() {
-    return [{
-      type: 'input',
-      name: 'title',
-      message: 'Your docs title?'
-    },
-    {
-      type: 'input',
-      name: 'description',
-      message: 'Your docs description?'
-    },
-    {
-      type: 'input',
-      name: 'folder',
-      message: 'Your docs default folder?',
-      default: 'docs'
-    }]
+    return [
+      {
+        type: 'input',
+        name: 'title',
+        message: 'Your docs title?'
+      },
+      {
+        type: 'input',
+        name: 'description',
+        message: 'Your docs description?'
+      },
+      {
+        type: 'input',
+        name: 'folder',
+        message: 'Your docs default folder?',
+        default: 'docs'
+      }
+    ]
+  }
+
+  appendScripts() {
+    const listOfLinePackage = fs
+      .readFileSync('package.json')
+      .toString()
+      .split('\n')
+
+    const includeScripts = val => val.includes('"scripts":')
+
+    const scriptsLine = listOfLinePackage.findIndex(includeScripts)
+
+    const insertScriptsLine = (packagesFile, lineNumber) => {
+      const newPackages = [...packagesFile]
+      newPackages.splice(lineNumber + 1, 0, '    "docs:dev": "vuepress dev docs",')
+      newPackages.splice(lineNumber + 2, 0, '    "docs:build": "vuepress build docs",')
+      return newPackages
+    }
+
+    const newPackageJson = insertScriptsLine(listOfLinePackage, scriptsLine).join('\n')
+
+    fs.writeFileSync('package.json', newPackageJson)
   }
 
   async installVuepress() {
     const {execSync} = require('child_process')
+    this.appendScripts()
+
     await execSync('npm i -s vuepress', {stdio: [0, 1, 2]})
     log(`now ${chalk.green('vuepress')} already added to your project`)
-    log(`Read more about Vuepress in this link ${chalk.green('https://vuepress.vuejs.org/config/')}`)
+    log(
+      `Read more about Vuepress config in this link ${chalk.green(
+        'https://vuepress.vuejs.org/config/'
+      )}`
+    )
   }
 }

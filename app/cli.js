@@ -4,7 +4,8 @@
 const meow = require('meow')
 const Vuepressify = require('./init')
 
-const cli = meow(`
+const cli = meow(
+  `
   Usage
     $ vuepressify init
     or
@@ -17,22 +18,25 @@ const cli = meow(`
     --version                 show vuepressify version
 
   Examples
-    $ vuepressify --generate=new_docs
+    $ vuepressify --generate=page_name
+    $ vuepressify -g=page_name
     or
-    $ vuepressify --generate=new_docs --loc=documentation
-`, {
-  flags: {
-    generate: {
-      type: 'input',
-      alias: 'g'
-    },
-    loc: {
-      type: 'string',
-      alias: 'l',
-      default: 'docs'
+    $ vuepressify --generate=page_name --loc=documentation
+`,
+  {
+    flags: {
+      generate: {
+        type: 'input',
+        alias: 'g'
+      },
+      loc: {
+        type: 'string',
+        alias: 'l',
+        default: 'docs'
+      }
     }
   }
-})
+)
 
 /* eslint no-new:0 */
 new Vuepressify(cli.input[0], cli.flags)
