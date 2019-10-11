@@ -108,6 +108,12 @@ module.exports = class {
         name: 'folder',
         message: 'Your docs default folder?',
         default: 'docs'
+      },
+      {
+        type: 'list',
+        name: 'packageManager',
+        message: 'Choose your package manager:',
+        choices: ['npm', 'pnpm', 'yarn']
       }
     ]
   }
@@ -134,11 +140,26 @@ module.exports = class {
     fs.writeFileSync('package.json', newPackageJson)
   }
 
+  getScripts() {
+    switch (this.answers.packageManager) {
+      case 'pnpm':
+        return 'pnpm add vuepress'
+      case 'yarn':
+        return 'yarn add vuepress'
+      default:
+        return 'npm i -s vuepress'
+    }
+  }
+
   async installVuepress() {
     const {execSync} = require('child_process')
     this.appendScripts()
+    const script = this.getScripts()
+    if (process.env.NODE_ENV === 'test') {
+      return
+    }
 
-    await execSync('npm i -s vuepress', {stdio: [0, 1, 2]})
+    await execSync(script, {stdio: [0, 1, 2]})
     log(`now ${chalk.green('vuepress')} already added to your project`)
     log(
       `Read more about Vuepress config in this link ${chalk.green(
