@@ -16,6 +16,7 @@ module.exports = class {
       initial: path.resolve(__dirname, 'templates/initial'),
       templates: path.resolve(__dirname, 'templates')
     }
+    this.pkg = JSON.parse(fs.readFileSync('package.json').toString()) || {}
     this.questions = this.listQuestions()
     this.input = input
     this.flags = flags
@@ -96,12 +97,14 @@ module.exports = class {
       {
         type: 'input',
         name: 'title',
-        message: 'Your docs title?'
+        message: 'Your docs title?',
+        default: this.pkg.name || ''
       },
       {
         type: 'input',
         name: 'description',
-        message: 'Your docs description?'
+        message: 'Your docs description?',
+        default: this.pkg.description || ''
       },
       {
         type: 'input',
