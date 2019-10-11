@@ -125,6 +125,11 @@ module.exports = class {
       .split('\n')
 
     const includeScripts = val => val.includes('"scripts":')
+    const includeDocsScripts = val => val.includes('docs:dev')
+
+    if (listOfLinePackage.findIndex(includeDocsScripts) >= 0) {
+      return
+    }
 
     const scriptsLine = listOfLinePackage.findIndex(includeScripts)
 
