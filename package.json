@@ -17,6 +17,7 @@
     "vuepressify": "app/cli.js"
   },
   "scripts": {
+    "publish": "np",
     "test": "xo && ava --serial"
   },
   "main": "app/index.js",
@@ -35,7 +36,8 @@
     "ejs": "^2.6.1",
     "fs-extra": "^6.0.1",
     "inquirer": "^6.0.0",
-    "meow": "^5.0.0"
+    "meow": "^5.0.0",
+    "np": "^5.1.1"
   },
   "license": "MIT",
   "engines": {
