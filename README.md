@@ -1,4 +1,4 @@
-# VuePressify [![Build Status](https://travis-ci.org/mikqi/vuepressify.svg?branch=master&longCache=true)](https://travis-ci.org/mikqi/vuepressify) ![license mit](https://img.shields.io/github/license/mikqi/vuepressify.svg?longCache=true) [![Twitter](https://img.shields.io/twitter/url/https/github.com/mikqi/vuepressify.svg)](https://twitter.com/intent/tweet?text=Add%20Vuepress%20to%20your%20existing%20project%20with%20Vuepressify%20🎉🎉%20:&url=https%3A%2F%2Fgithub.com%2Fmikqi%2Fvuepressify)
+# VuePressify [![Build Status](https://travis-ci.org/mikqi/vuepressify.svg?branch=master&longCache=true)](https://travis-ci.org/mikqi/vuepressify) ![license mit](https://img.shields.io/github/license/mikqi/vuepressify.svg?longCache=true) [![Twitter](https://img.shields.io/twitter/url/https/github.com/mikqi/vuepressify.svg)](https://twitter.com/intent/tweet?text=Add%20Vuepress%20to%20your%20existing%20project%20with%20Vuepressify%20🎉🎉%20:&url=https%3A%2F%2Fgithub.com%2Fmikqi%2Fvuepressify)[![npm version](https://badge.fury.io/js/vuepressify.svg)](https://badge.fury.io/js/vuepressify)
 
 <h1 align="center">
   <img src="media.gif" alt="in action" />
